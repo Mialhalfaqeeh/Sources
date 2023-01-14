@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct SourcesApp: App {
+    
+@StateObject private var dataController = DataController()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Splash()
+//            ContentView()
+                .environment(\.managedObjectContext, dataController.container.viewContext)
+            
+//                      Splash()
         }
     }
 }
